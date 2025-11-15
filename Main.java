@@ -1,33 +1,44 @@
+class Employee {
 
-class Students {
-    String Name;
-    int roll;
-    int sem;
-    String Branch;
-    String gender;
+    // Properties
+    private int salary;
+    private String name;
 
-    Students(String name,int Roll,int SEM, String branch,String Gender){
-        this.Name= name;
-        this.roll=Roll;
-        this.sem=SEM;
-        this.Branch=branch;
-        this.gender=Gender;
+    // Constructor
+    public Employee(int salary, String name) {
+        this.salary = salary;
+        this.name = name;
     }
 
-    void displayInfo(){
-        System.out.println("Name: " + Name);
-        System.out.println("Roll no.: " + roll);
-        System.out.println("Semester: " + sem);
-        System.out.println("Branch: " + Branch);
-        System.out.println("Gender:  " + gender );
+    // Method to return salary
+    public int getSalary() {
+        return salary;
+    }
+
+    // Method to return name
+    public String getName() {
+        return name;
+    }
+
+    // Method to change name
+    public void setName(String newName) {
+        this.name = newName;
     }
 }
 
-public class Main{
-    public static void main(String [] args){
-        Students s1= new Students("Shaina", 54, 3, "AIML","Female");
-        Students s2= new Students("Gyan", 24, 1, "AIML","male");
-        s1.displayInfo();
-        s2.displayInfo();
+public class Main {
+    public static void main(String[] args) {
+
+        // Create an Employee object
+        Employee emp = new Employee(50000, "Shaina");
+
+        // Test methods
+        System.out.println("Employee Name: " + emp.getName());
+        System.out.println("Employee Salary: " + emp.getSalary());
+
+        // Change name
+        emp.setName("Akshaya");
+
+        System.out.println("Updated Name: " + emp.getName());
     }
 }
